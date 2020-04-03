@@ -52,7 +52,7 @@
 
       calculate() {
           this.parseExpression();
-          this.getResult();
+          this.expression = this.getResult;
       },
 
       parseExpression() {
@@ -77,8 +77,9 @@
         if (value !== '') {
           this.numbers.push(Number(value));
         }
-      },
-
+      }
+    },
+    computed: {
       getResult() {
         let firstNumber = this.numbers[0];
         let secondNumber = this.numbers[1];
@@ -107,7 +108,7 @@
           }
           secondNumber = this.numbers[i + 2];
         }
-        this.expression = firstNumber;
+        return firstNumber;
       }
     }
   }
